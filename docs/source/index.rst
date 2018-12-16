@@ -5,9 +5,8 @@
 
 Welcome to BindToConfig's documentation!
 ========================================
-**BindToConfig** is a simple and lightweight alternative to **.NET Core Options**. 
-Focused on simplicity and good practices. Which means it doesn't require any additional interface on classes. 
-It promotes creating many small, clean, immutable classes that are a representation of application's configuration and it's lifetime scope and binding to the configuration are set in composition root, not directly by dependent classes. 
+**BindToConfig** is a simple and lightweight alternative to **.NET Core Options**, that doesn't require any additional interface implemented by classes.
+Focused on simplicity and good practices, promotes creating many small, clean, immutable classes that are a representation of application's configuration which lifetime scope and binding to the configuration are set in composition root and not directly by dependent classes. 
 
 **BindToConfig** fills the gap between .NET Core's Configuration and DI, by taking care of mapping and binding objects to the configuration, validating and registering in .NET Core DI. 
 With just a single method call it provides .NET Core applications with an easy way of adding classes representing parts of Configuration. 
