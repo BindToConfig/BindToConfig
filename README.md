@@ -1,6 +1,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://raw.githubusercontent.com/BindToConfig/BindToConfig/master/LICENSE)
 [![Documentation Status](https://readthedocs.org/projects/bindtoconfig/badge/?version=latest)](https://bindtoconfig.readthedocs.io/en/latest/?badge=latest)
-      
+[![Coverage Status](https://coveralls.io/repos/github/BindToConfig/BindToConfig/badge.svg?branch=)](https://coveralls.io/github/BindToConfig/BindToConfig?branch=master)
+[![Build Status](https://dev.azure.com/BindToConfig/BindToConfig/_apis/build/status/BindToConfig.BindToConfig?branchName=master)](https://dev.azure.com/BindToConfig/BindToConfig/_build/latest?definitionId=1?branchName=master)
+
 # BindToConfig .Net Core
 ***BindToConfig*** is a simple and lightweight alternative to ***.NET Core Options***, that doesn't require any additional interface implemented by classes.
 Focused on simplicity and good practices, promotes creating many small, clean, immutable classes that are a representation of application's configuration which lifetime scope and binding to the configuration are set in composition root and not directly by dependent classes. 
