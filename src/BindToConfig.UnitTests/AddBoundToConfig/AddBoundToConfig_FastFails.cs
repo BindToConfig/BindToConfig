@@ -1,4 +1,5 @@
-﻿using BindToConfig.Exceptions;
+﻿using System;
+using BindToConfig.Exceptions;
 using FluentAssertions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -44,6 +45,14 @@ namespace BindToConfig.UnitTests.AddBoundToConfig
       exception.CorrespondingType.Should().Be<NotInstantiationClass>();
     }
 
+    [Fact]
+    public void
+      Throws_When_Passed_Configuration_Is_Null()
+    {
+      // act && assert
+      Assert.Throws<ArgumentNullException>(
+        () => new ServiceCollection().AddBoundToConfig<NotInstantiationClass>(null));
+    }
     public class NotInstantiationClass
     {
       public NotInstantiationClass(int i)
