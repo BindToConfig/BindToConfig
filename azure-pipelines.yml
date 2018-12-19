@@ -1,0 +1,27 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'VS2017-Win2016'
+
+variables:
+- group: BindToConfig
+- name:  buildConfiguration
+  value: 'Debug'
+- name: coverallsToken
+  value: $(coverallsRepoToken)
+
+steps:
+- script: dotnet build src\ --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+- task: BatchScript@1
+  inputs:
+    filename: test-coverage.bat
+  env:
+    commitId: $(Build.SourceVersion)
+    commitBranch: $(Build.SourceBranchName)
+    commitAuthor: $(Build.RequestedFor)
+    commitEmail: $(Build.RequestedForEmail)
+    commitMessage: $(Build.SourceVersionMessage)
+    jobId: $(Agent.Id)
+    coverallsToken: $(coverallsToken)
